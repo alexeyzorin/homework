@@ -1,14 +1,10 @@
 #Базовый образ
 FROM tomcat:8.5.50
 
-#Обновляем библиотеки linux
-RUN apt-get update
-
-#Ставим maven
-RUN apt-get install maven -y
-
-#Устанавливаем GIT
-RUN apt-get install git -y
+#Обновляем библиотеки linux, ставим maven, ставим git
+RUN apt-get update; \
+    apt-get install maven -y; \
+    apt-get install git -y
 
 #Устанавливаем порт
 EXPOSE 8080
