@@ -26,7 +26,7 @@
   - name: send war file to deploy_server
     fetch:
      src: /home/webapp/target/hello-1.0.war
-     dest: /var/lib-deploy
+     dest: /home-deploy
      flat: yes
 
 
@@ -50,8 +50,8 @@
 #    delegate_to: build
   - name:
     copy:
-      src: /var/lib/hello-1.0.war
-      dest: /var/lib/tomcat8/webapps/hello-1.0.war
+      src: /home/hello-1.0.war
+      dest: /var/lib/tomcat8/webapps
 
   - name: restart tomcat8
     service:
