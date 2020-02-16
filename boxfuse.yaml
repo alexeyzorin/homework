@@ -17,7 +17,7 @@
   - name: check if there is a git repository
     git:
      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-     dest: /home/azorin
+     dest: /home/webapp
      clone: yes
 
   - name: run maven
@@ -43,7 +43,7 @@
   - name: copy war file hello-1.0
     synchronize:
      mode: pull
-     src: /home/azorin/target/hello-1.0.war/on/build
+     src: /home/webapp/target/hello-1.0.war/on/build
      dest: /var/lib/tomcat8/webapps/on/delpoy
 
   - name: restart tomcat8
