@@ -18,7 +18,7 @@
     git:
      repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
      dest: /home/webapp
-     clone: yes
+#     clone: yes
 
   - name: run maven
     shell: cd /home/webapp && mvn package
@@ -50,7 +50,7 @@
       src: /opt/84.201.160.144/home/webapp/target/hello-1.0.war
       dest: /var/lib/tomcat8/webapps
 
-  - name: reloaded tomcat8
+  - name: restarted tomcat8
     service:
      name: tomcat8
-     state: reloaded
+     state: restarted
