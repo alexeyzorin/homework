@@ -23,10 +23,10 @@
   - name: run maven
     shell: cd /home/webapp && mvn package
 
-  - name: send war file to deploy_server
+  - name: send war file to master
     fetch:
      src: /home/webapp/target/hello-1.0.war
-     dest: /home
+     dest: /opt
 
 
 - name: deploy app
@@ -44,12 +44,9 @@
      name: tomcat8
      state: present
 
-#  - name: copy war file hello-1.0
-#    synchronize: src=/home/webapp/target/hello-1.0.war/build  dest=/var/lib/tomcat8/webapps/deploy
-#    delegate_to: build
   - name:
-    copy:
-      src: /home/84.201.160.144/home/webapp/target/hello-1.0.war
+    copy: copy war file from master
+      src: /opt/84.201.160.144/home/webapp/target/hello-1.0.war
       dest: /var/lib/tomcat8/webapps
 
   - name: restart tomcat8
