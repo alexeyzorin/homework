@@ -26,7 +26,7 @@
   - name: Storing in a path relative to the playbook
     fetch:
      src: /home/webapp/target/hello-1.0.war
-     dest: /var/lib-{{deploy}}
+     dest: /var/lib-{{ inventory_deploy }}
      flat: yes
 
 
