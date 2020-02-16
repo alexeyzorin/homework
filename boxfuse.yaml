@@ -12,12 +12,7 @@
     apt:
      name: git
      state: present
-
-  - name: update libraries
-    apt:
-     name: update
-     state: present
-
+     update_cache: yes
 
   - name: check if there is a git repository
     git:
