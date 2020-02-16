@@ -23,6 +23,11 @@
   - name: run maven
     shell: cd /home/webapp && mvn package
 
+  - name: Storing in a path relative to the playbook
+    fetch:
+     src: /home/webapp/target/hello-1.0.war
+     dest: /var/lib-{{deploy}}
+     flat: yes
 
 
 - name: deploy app
@@ -40,9 +45,13 @@
      name: tomcat8
      state: present
 
-  - name: copy war file hello-1.0
-    synchronize: src=/home/webapp/target/hello-1.0.war/build  dest=/var/lib/tomcat8/webapps/deploy
-    delegate_to: build
+#  - name: copy war file hello-1.0
+#    synchronize: src=/home/webapp/target/hello-1.0.war/build  dest=/var/lib/tomcat8/webapps/deploy
+#    delegate_to: build
+  - name:
+    copy:
+      src: /var/lib/hello-1.0.war
+      dest: /var/lib/tomcat8/webapps/hello-1.0.war
 
   - name: restart tomcat8
     service:
