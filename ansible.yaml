@@ -1,0 +1,57 @@
+- name: build app
+  hosts: build
+  become: yes
+
+  tasks:
+  - name: ensure maven package is present
+    apt:
+     name: maven
+     state: present
+
+  - name: ensure git package is present
+    apt:
+     name: git
+     state: present
+
+  - name: update libraries
+    apt:
+     name: update
+     state: present
+
+
+  - name: check if there is a git repository
+    git:
+     repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+     dest: /opt
+     clone: yes
+
+  - name: run maven
+    shell: mvn package /opt/boxfuse-sample-java-war-hello
+
+
+
+- name: deploy app
+  hosts: delpoy
+  become: yes
+
+  tasks:
+  - name: ensure jdk package is present
+    apt:
+     name: default-jdk
+     state: present
+
+  - name: ensure tomcat package is present
+    apt:
+     name: tomcat8
+     state: present
+
+  - name: copy war file hello-1.0
+      synchronize:
+        mode: pull
+        src: /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war/on/build
+        dest: /var/lib/tomcat8/webapps/on/delpoy
+
+  - name: restart tomcat8
+     service:
+      name: tomcat8
+      state: restart
