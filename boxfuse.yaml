@@ -21,7 +21,7 @@
      clone: yes
 
   - name: run maven
-    shell: mvn package /opt/boxfuse-sample-java-war-hello
+    shell: mvn package /opt
 
 
 
@@ -43,7 +43,7 @@
   - name: copy war file hello-1.0
     synchronize:
      mode: pull
-     src: /opt/boxfuse-sample-java-war-hello/target/hello-1.0.war/on/build
+     src: /opt/target/hello-1.0.war/on/build
      dest: /var/lib/tomcat8/webapps/on/delpoy
 
   - name: restart tomcat8
