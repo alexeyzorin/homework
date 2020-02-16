@@ -11,3 +11,5 @@ services:
   tomcat:
     image: tomcat:8.5.50
     restart: always
+    ports:
+      - 8080:8080

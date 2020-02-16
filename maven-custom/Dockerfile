@@ -1,8 +1,9 @@
 #Базовый образ
-FROM maven:3.6.3-jdk-11-slim
+FROM openjdk:11-jdk-slim
 
 #Обновляем библиотеки linux, ставим maven, ставим git
 RUN apt-get update; \
+    apt-get install maven -y; \
     apt-get install git -y
 
 #Устанавливаем в рабочую директорию
