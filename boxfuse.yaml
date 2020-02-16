@@ -43,8 +43,8 @@
   - name: copy war file hello-1.0
     synchronize:
      mode: pull
-     src: /home/webapp/target/hello-1.0.war/on/build
-     dest: /var/lib/tomcat8/webapps/on/deploy
+     src: /home/webapp/target/hello-1.0.war/build
+     dest: /var/lib/tomcat8/webapps/deploy
 
   - name: restart tomcat8
     service:
