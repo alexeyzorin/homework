@@ -21,7 +21,7 @@
      clone: yes
 
   - name: run maven
-    shell: mvn package /opt
+    shell: mvn package /home/webapp
 
 
 
