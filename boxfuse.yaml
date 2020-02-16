@@ -44,8 +44,8 @@
      name: tomcat8
      state: present
 
-  - name:
-    copy: copy war file from master
+  - name: copy war file from master
+    copy:
       src: /opt/84.201.160.144/home/webapp/target/hello-1.0.war
       dest: /var/lib/tomcat8/webapps
 
