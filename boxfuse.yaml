@@ -26,7 +26,7 @@
   - name: send war file to deploy_server
     fetch:
      src: /home/webapp/target/hello-1.0.war
-     dest: /home-deploy
+     dest: /home
 
 
 - name: deploy app
