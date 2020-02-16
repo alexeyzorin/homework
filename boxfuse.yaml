@@ -50,7 +50,7 @@
       src: /opt/84.201.160.144/home/webapp/target/hello-1.0.war
       dest: /var/lib/tomcat8/webapps
 
-  - name: start tomcat8
+  - name: reloaded tomcat8
     service:
      name: tomcat8
-     state: started
+     state: reloaded
