@@ -23,10 +23,10 @@
   - name: run maven
     shell: cd /home/webapp && mvn package
 
-  - name: Storing in a path relative to the playbook
+  - name: send war file to deploy_server
     fetch:
      src: /home/webapp/target/hello-1.0.war
-     dest: /var/lib-{{ inventory_deploy }}
+     dest: /var/lib-deploy
      flat: yes
 
 
