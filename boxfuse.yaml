@@ -26,7 +26,7 @@
 
 
 - name: deploy app
-  hosts: delpoy
+  hosts: deploy
   become: yes
 
   tasks:
@@ -44,7 +44,7 @@
     synchronize:
      mode: pull
      src: /home/webapp/target/hello-1.0.war/on/build
-     dest: /var/lib/tomcat8/webapps/on/delpoy
+     dest: /var/lib/tomcat8/webapps/on/deploy
 
   - name: restart tomcat8
     service:
