@@ -41,10 +41,7 @@
      state: present
 
   - name: copy war file hello-1.0
-    synchronize:
-     mode: push
-     src: /home/webapp/target/hello-1.0.war/build
-     dest: /var/lib/tomcat8/webapps/deploy
+    synchronize: src=/home/webapp/target/hello-1.0.war/build  dest=/var/lib/tomcat8/webapps/deploy
     delegate_to: build
 
   - name: restart tomcat8
