@@ -49,7 +49,7 @@
 #    delegate_to: build
   - name:
     copy:
-      src: /home/hello-1.0.war
+      src: /home/84.201.160.44/home/webaaps/target/hello-1.0.war
       dest: /var/lib/tomcat8/webapps
 
   - name: restart tomcat8
