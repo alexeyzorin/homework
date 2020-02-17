@@ -2,10 +2,10 @@
 FROM ubuntu:18.04
 
 #Обновляем библиотеки linux, ставим maven, ставим git
-RUN apt-get install default-jdk -y; \
+RUN apt-get update; \
+    apt-get install default-jdk -y; \
     apt-get install maven -y; \
-    apt-get install git -y; \
-    apt-get update
+    apt-get install git -y;
 
 #Устанавливаем в рабочую директорию
 WORKDIR /opt
