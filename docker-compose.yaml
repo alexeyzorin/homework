@@ -2,14 +2,10 @@ version: '3.6'
 services:
   mvn:
     build: maven-custom
-    links:
-      - tomcat
-    restart: always
     volumes:
       - ./boxfuse:/opt/boxfuse-sample-java-war-hello/target/hello-1.0.war
 
   tomcat:
     image: tomcat:8.5.50
-    restart: always
     ports:
       - 8080:8080
