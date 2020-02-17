@@ -1,5 +1,5 @@
 #Базовый образ
-FROM alpine:3.11
+FROM ubuntu:18.04
 
 #Обновляем библиотеки linux, ставим maven, ставим git
 RUN apt-get install default-jdk -y; \
