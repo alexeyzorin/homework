@@ -1,5 +1,5 @@
 #Базовый образ
-FROM openjdk:11-jdk-slim
+FROM openjdk:latest
 
 #Обновляем библиотеки linux, ставим maven, ставим git
 RUN apt-get install maven -y; \
