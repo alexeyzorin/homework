@@ -1,8 +1,9 @@
 #Базовый образ
-FROM openjdk:latest
+FROM alpine:3.11
 
 #Обновляем библиотеки linux, ставим maven, ставим git
-RUN apt-get install maven -y; \
+RUN apt-get install default-jdk -y; \
+    apt-get install maven -y; \
     apt-get install git -y; \
     apt-get update
 
