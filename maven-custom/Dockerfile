@@ -2,9 +2,9 @@
 FROM openjdk:11-jdk-slim
 
 #Обновляем библиотеки linux, ставим maven, ставим git
-RUN apt-get install maven -y; \
-    apt-get install git -y; \
-    apt-get update
+RUN apt install maven -y; \
+    apt install git -y; \
+    apt update
 
 #Устанавливаем в рабочую директорию
 WORKDIR /opt
