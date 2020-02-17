@@ -3,7 +3,7 @@ services:
   mvn:
     build: maven-custom
     volumes:
-      - ./boxfuse:/opt/boxfuse-sample-java-war-hello/target/hello-1.0.war
+      - ./boxfuse:/opt/boxfuse-sample-java-war-hello/target
 
   tomcat:
     image: tomcat:8.5.50
